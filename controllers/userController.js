@@ -62,6 +62,17 @@ export const getAllUsers = async (req, res) => {
       res.status(400).send(error);
     }
   };
+
+  export const countUsers = async (req, res) => {
+    try {
+      const countedUsers = await userModel.countDocuments({username: req.body.username});
+  
+      res.status(200).json(countedUsers);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send(error);
+    }
+  };
   
 
   
