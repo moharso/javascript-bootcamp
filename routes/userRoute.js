@@ -1,5 +1,5 @@
 import express from "express";
-import { createUser, getAllUsers, getUser, deleteUser, updateUser, countUsers } from "../controllers/userController.js"
+import { createUser, getAllUsers, getUser, deleteUser, updateUser, countUsers, sortAndLimitUsers } from "../controllers/userController.js"
 
 const router = express.Router()
 
@@ -14,5 +14,7 @@ router.delete('/delete/:username', deleteUser)
 router.put('/update/:username', updateUser)
 
 router.get("/count", countUsers);
+
+router.get("/sortAndLimit", sortAndLimitUsers);
 
 export default router;

@@ -73,6 +73,17 @@ export const getAllUsers = async (req, res) => {
       res.status(400).send(error);
     }
   };
+
+  export const sortAndLimitUsers = async (req, res) => {
+    try {
+      const sortedUsers = await userModel.find().sort({createdAt: -1}).limit(2);;
+  
+      res.status(200).json(sortedUsers);
+    } catch (error) {
+      console.log(error);
+      res.status(400).send(error);
+    }
+  };
   
 
   

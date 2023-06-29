@@ -10,8 +10,10 @@ const userSchema = new mongoose.Schema({
         type: String,
         min: 4,
         required: true,
-    },
-    
-});
+    },  
+},
+{
+    timestamps: true,
+  });
 
 export default mongoose.model("user", userSchema)
